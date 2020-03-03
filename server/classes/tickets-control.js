@@ -22,6 +22,12 @@ class TicketControl{
     
     }
 
+    getUltimoTicket(){
+
+        return `Ticket ${ this.ultimo }`
+
+    }
+
     reiniciarConteo() {
     
         this.ultimo = 0;

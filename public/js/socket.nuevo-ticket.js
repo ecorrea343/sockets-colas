@@ -8,6 +8,11 @@ socket.on('connect', function(){
     console.log('Conectado al servidor');
 })
 
+socket.on('estadoActual' , function(respuesta){
+    label.text(respuesta.actual)
+    console.log(respuesta);
+})
+
 socket.on('disconnect', function(){
     console.log('Desconectado del Servidor ');
 })
