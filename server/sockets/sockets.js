@@ -6,6 +6,7 @@ const ticketControl = new TicketControl();
 
 io.on('connection', (client) =>{
     
+    //Funcion que permite ver el siguiente ticket en pantalla
     client.on('siguienteTicket', (data, callback) => {
         let siguiente = ticketControl.siguiente();
         console.log(siguiente);
@@ -13,14 +14,10 @@ io.on('connection', (client) =>{
     })
 
     //Emitir un evento de Estado Actual
-
     client.emit('estadoActual', {
 
-            actual :ticketControl.getUltimoTicket()
+         actual :ticketControl.getUltimoTicket()
         
-
     } )
-
-  
 
 })

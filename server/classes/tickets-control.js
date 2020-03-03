@@ -1,13 +1,12 @@
 const fs = require('fs');
 
-
 class TicketControl{
 
     constructor(){
-
-        this.ultimo = 0;
-        this.hoy = new Date().getDate();
-        let data = require('../data/data.json');
+        //Inicializacion de elementos al iniciar el servidor 
+        this.ultimo = 0; // Utimo ticket 
+        this.hoy    = new Date().getDate(); // la fecha de hoy 
+        let data    = require('../data/data.json'); // la data que se encuentra en el Json
         
         (data.hoy === this.hoy) ? this.ultimo = data.ultimo : this.reiniciarConteo();
         
@@ -40,7 +39,7 @@ class TicketControl{
 
         let jsonData = {
             ultimo: this.ultimo,
-            hoy:this.hoy
+            hoy   : this.hoy
         }
     
         let jsonDataStrig = JSON.stringify(jsonData);
