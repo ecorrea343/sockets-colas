@@ -18,6 +18,26 @@ io.on('connection', (client) =>{
 
          actual :ticketControl.getUltimoTicket()
         
-    } )
+    })
+
+       //Funcion  para atender cliente
+       client.on('atenderTicket', (data, callback) =>{
+
+        if ( !data.escritorio ) {
+            return callback({
+                ok:false,
+                message:'El escritorio es necesario'
+            })
+        }
+
+        let atender = ticketControl.atenderTicket( data.escritorio );
+        console.log(atender);
+        callback(atender);
+
+        // Actualziar / notificar cambios en los ultimos 4
+
+        
+
+    })
 
 })
