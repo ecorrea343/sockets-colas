@@ -43,13 +43,19 @@ class TicketControl{
         this.tickets.push(ticket);
 
         this.grabarArchivo();
-        return `Ticket ${ this.ultimo }  `
+        return `Ticket: ${ this.ultimo }  `
     
     }
 
     getUltimoTicket(){
 
-        return `Ticket ${ this.ultimo }`
+        return `Ticket: ${ this.ultimo }`
+
+    }
+
+    getUltimo4Ticket(){
+
+        return this.ultimos4;
 
     }
 

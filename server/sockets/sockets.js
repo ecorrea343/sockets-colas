@@ -16,7 +16,8 @@ io.on('connection', (client) =>{
     //Emitir un evento de Estado Actual
     client.emit('estadoActual', {
 
-         actual :ticketControl.getUltimoTicket()
+         actual :ticketControl.getUltimoTicket(),
+         ultimos4 :ticketControl.getUltimo4Ticket(),
         
     })
 

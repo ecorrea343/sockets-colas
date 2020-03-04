@@ -22,7 +22,7 @@ $('button').on('click', function() {
         }
 
         console.log(resp);
-        label.text('Ticket '+ resp.numero)
+        label.text('Ticket : '+ resp.numero)
 
     })
 
