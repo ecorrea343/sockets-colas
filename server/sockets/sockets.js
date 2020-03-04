@@ -21,8 +21,9 @@ io.on('connection', (client) =>{
         
     })
 
+
        //Funcion  para atender cliente
-       client.on('atenderTicket', (data, callback) =>{
+    client.on('atenderTicket', (data, callback) =>{
 
         if ( !data.escritorio ) {
             return callback({
@@ -36,9 +37,15 @@ io.on('connection', (client) =>{
         callback(atender);
 
         // Actualziar / notificar cambios en los ultimos 4
+        client.broadcast.emit('ultimos4',{
 
+            ultimos4:ticketControl.getUltimo4Ticket()
+        
+        })
         
 
     })
+
+    
 
 })

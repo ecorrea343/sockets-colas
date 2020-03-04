@@ -19,18 +19,16 @@ socket.on('estadoActual', function(data){
 
     actualizaHTML(data.ultimos4);
 
-    // lblTicket1.text( data.actual);
-    // lblEscritorio1.text( 'Escritorio ' + data.ultimos4[0].escritorio )
+})
 
-    // lblTicket2.text( 'Ticket '+data.ultimos4[1].numero);
-    // lblEscritorio2.text('Escritorio '+ data.ultimos4[1].escritorio);
-
-    // lblTicket3.text( 'Ticket '+data.ultimos4[2].numero);
-    // lblEscritorio3.text('Escritorio '+ data.ultimos4[2].escritorio);
+socket.on('ultimos4', function(data){
     
-    // lblTicket4.text( 'Ticket '+data.ultimos4[3].numero);
-    // lblEscritorio4.text('Escritorio '+ data.ultimos4[3].escritorio);
+    //console.log(data);
+    
+    var audio = new Audio('audio/new-ticket.mp3');
+    audio.play();
 
+    actualizaHTML(data.ultimos4);
 
 })
 
